@@ -15,7 +15,7 @@ import re, random, types
 
 from bs4 import BeautifulSoup 
 
-base_url = 'https://www.baidu.com/'
+base_url = 'http://www.baidu.com'
 
 user_agents = ['Mozilla/5.0 (Windows NT 6.1; WOW64; rv:23.0) Gecko/20130406 Firefox/23.0', \
         'Mozilla/5.0 (Windows NT 6.1; WOW64; rv:18.0) Gecko/20100101 Firefox/18.0', \
@@ -75,7 +75,7 @@ class SearchResult:
             file.close()
 
 
-class GoogleAPI:
+class BaiduAPI:
     def __init__(self):
         timeout = 40
         socket.setdefaulttimeout(timeout)
@@ -175,7 +175,7 @@ def test():
         print 'please enter search query.'
         return
     query = sys.argv[1]
-    api = GoogleAPI()
+    api = BaiduAPI()
     result = api.search(query)
     for r in result:
         r.printIt()

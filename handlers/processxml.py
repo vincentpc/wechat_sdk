@@ -50,6 +50,7 @@ def processXml(xml):
                         r.getContent(),"",r.getURL())
                 itemlist.append(pic_item)
             response = wechat.picResp(itemlist,funcflag = 0)
+
         elif t.startswith('test'):
             data = t[5:]
             text = u"echo back: %s\n" % (data) #echo back
