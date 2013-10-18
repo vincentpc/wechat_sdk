@@ -2,7 +2,7 @@
 
 import logging
 
-from search.gsearch import GoogleAPI
+from search.gsearch import GoogleAPI,BaiduAPI
 from finance.jsquery import query_fund,query_stock
 from handlers.wechat import WeChat
 import setting.settings as settings
@@ -40,8 +40,8 @@ def processXml(xml):
             else:
                 text = u"stock not exist"
             response = wechat.textResp(content = text, funcflag = 0)
-        elif t.startswith('google'):
-            query = t[7:]
+        elif t.startswith('g '):
+            query = t[2:]
             api = GoogleAPI()
             result = api.search(query)
             itemlist = []
@@ -50,7 +50,16 @@ def processXml(xml):
                         r.getContent(),"",r.getURL())
                 itemlist.append(pic_item)
             response = wechat.picResp(itemlist,funcflag = 0)
-
+        elif t.startswith('b '):
+            query = t[2:]
+            api = BaiduAPI()
+            result = api.search(query)
+            itemlist = []
+            for r in result:
+                pic_item = wechat.make_pic(r.getTitle(),\
+                        r.getContent(),"",r.getURL())
+                itemlist.append(pic_item)
+            response = wechat.picResp(itemlist,funcflag = 0)
         elif t.startswith('test'):
             data = t[5:]
             text = u"echo back: %s\n" % (data) #echo back
