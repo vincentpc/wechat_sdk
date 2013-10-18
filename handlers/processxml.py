@@ -2,7 +2,8 @@
 
 import logging
 
-from search.gsearch import GoogleAPI,BaiduAPI
+from search.gsearch import GoogleAPI
+from search.bsearch import BaiduAPI
 from finance.jsquery import query_fund,query_stock
 from handlers.wechat import WeChat
 import setting.settings as settings
