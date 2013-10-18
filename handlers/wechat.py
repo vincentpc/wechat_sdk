@@ -35,7 +35,7 @@ class WeChat(object):
                         self.ToUserName,
                         time.time(),
                         url,
-                        hqurl,
+                        url,
                         funcflag
             )
 
