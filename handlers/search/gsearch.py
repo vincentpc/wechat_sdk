@@ -8,6 +8,7 @@
 # google search results crawler 
 
 import sys
+import logging
 reload(sys)
 sys.setdefaultencoding('utf-8')
 
@@ -71,7 +72,7 @@ class SearchResult:
             file.write('content:' + self.content + '\n\n')
 
         except IOError, e:
-            print 'file error:', e
+            logging.error('file error:')
         finally:
             file.close()
 
@@ -152,13 +153,13 @@ class GoogleAPI:
                 results = self.extractSearchResults(html)
                 return results
             except urllib2.URLError,e:
-                print 'url error:', e
+                logging.error('url error:')
                 self.randomSleep()
                 retry = retry - 1
                 continue
             
             except Exception, e:
-                print 'error:', e
+                logging.error('error:')
                 retry = retry - 1
                 self.randomSleep()
                 continue
