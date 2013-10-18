@@ -37,7 +37,7 @@ class WeChat(object):
                         url,
                         funcflag
             )
-       
+         print response
          return response
 
     @staticmethod

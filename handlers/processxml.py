@@ -4,7 +4,7 @@ import logging
 
 from search.gsearch import GoogleAPI
 from search.bsearch import BaiduAPI
-from music.bmusic import getSongUrl
+from music.mamusic import getSongUrl
 from finance.jsquery import query_fund,query_stock
 from handlers.wechat import WeChat
 import setting.settings as settings
