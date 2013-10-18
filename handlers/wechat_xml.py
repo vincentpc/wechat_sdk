@@ -7,6 +7,16 @@ textResp = '<xml>\n\
                 <FuncFlag>%d</FuncFlag>\n\
            </xml>'
 
+musicResp = '<xml>\n\
+                <ToUserName><![CDATA[%s]]></ToUserName>\n\
+                <FromUserName><![CDATA[%s]]></FromUserName>\n\
+                <CreateTime>%d</CreateTime>\n\
+                <MsgType><![CDATA[music]]></MsgType>\n\
+                <MusicUrl><![CDATA[%s]]></MusicUrl>\n\
+                <HQMusicUrl><![CDATA[%s]]></HQMusicUrl>\n\
+                <FuncFlag>%d</FuncFlag>\n\
+           </xml>'
+           
 picItem = '<item>\n\
             <Title><![CDATA[%s]]></Title>\n\
             <Description><![CDATA[%s]]></Description>\n\
