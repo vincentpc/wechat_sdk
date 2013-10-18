@@ -140,6 +140,7 @@ class GoogleAPI:
     # @param lang -> language of search results  
     # @param num -> number of search results to return 
     def search(self, query, lang='en', num=10):
+        query = query.encode('utf-8') #change query code into utf-8 for chinese
         query = urllib2.quote(query)
         search_results = list()
         url = '%s/search?hl=%s&num=%d&q=%s' % (base_url, lang, num, query)
