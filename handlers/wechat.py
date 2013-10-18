@@ -28,7 +28,19 @@ class WeChat(object):
         return response
 
 
-        
+     def musicResp(self, url, hqurl="", funcflag=0):
+
+        response = wechat_xml.musicResp % (
+                        self.FromUserName,
+                        self.ToUserName,
+                        time.time(),
+                        url,
+                        hqurl,
+                        funcflag
+            )
+
+
+        return response       
 
         
     @staticmethod
