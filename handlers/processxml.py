@@ -68,7 +68,7 @@ def processXml(xml):
                 text = data
             else:
                 text = u"music not exist"
-            response = wechat.musicResp(url = text, funcflag = 0)
+            response = wechat.musicResp(title =t[2:], url = text, funcflag = 0)
             
         elif t.startswith('test'):
             data = t[5:]
