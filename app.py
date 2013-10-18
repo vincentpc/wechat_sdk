@@ -2,6 +2,7 @@
 
 import tornado.web
 import logging
+import os
 
 from handlers.wechat import WeChat
 from handlers.processxml import processXml
@@ -38,7 +39,7 @@ application = tornado.web.Application([
 
 if __name__ == "__main__":
 
-    logging.basicConfig(filename = os.path.join(os.getcwd(), '/log/log'), /
+    logging.basicConfig(filename = os.path.join(os.getcwd(), 'log/log'), \
         level = logging.WARN, filemode = 'w', format = '%(asctime)s - %(levelname)s: %(message)s')
 
     application.listen(80)
