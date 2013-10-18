@@ -18,7 +18,7 @@ musicResp = '<xml>\n\
                 <MusicUrl><![CDATA[%s]]></MusicUrl>\n\
                 <HQMusicUrl><![CDATA[%s]]></HQMusicUrl>\n\
                 </Music>\n\
-                <FuncFlag>%d</FuncFlag>\n\
+                <FuncFlag>%s</FuncFlag>\n\
            </xml>'
            
 picItem = '<item>\n\
