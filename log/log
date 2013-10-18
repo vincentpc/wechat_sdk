@@ -1,0 +1,21 @@
+2013-10-18 09:43:01,933 - ERROR: Uncaught exception POST /yixinpublic?timestamp=1382089376&nonce=8044113632608642&signature=e814feca978dd398b9e5874c39b2f123fcf6a49a (223.252.198.71)
+HTTPRequest(protocol='http', host='54.200.177.39', method='POST', uri='/yixinpublic?timestamp=1382089376&nonce=8044113632608642&signature=e814feca978dd398b9e5874c39b2f123fcf6a49a', version='HTTP/1.1', remote_ip='223.252.198.71', headers={'Content-Length': '268', 'Content-Encoding': 'UTF-8', 'Content-Type': 'text/xml; charset=UTF-8', 'Connection': 'Keep-Alive', 'Host': '54.200.177.39', 'Accept': 'application/xml'})
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/tornado/web.py", line 1141, in _when_complete
+    callback()
+  File "/usr/local/lib/python2.7/dist-packages/tornado/web.py", line 1162, in _execute_method
+    self._when_complete(method(*self.path_args, **self.path_kwargs),
+  File "app.py", line 27, in post
+    data = processXml(self.request.body)
+  File "/home/ubuntu/tornado/wechatwiki/handlers/processxml.py", line 66, in processXml
+    data = getSongUrl(t[2:],"")
+  File "/home/ubuntu/tornado/wechatwiki/handlers/music/mamusic.py", line 15, in getSongUrl
+    data = json.loads(c);
+  File "/usr/lib/python2.7/json/__init__.py", line 338, in loads
+    return _default_decoder.decode(s)
+  File "/usr/lib/python2.7/json/decoder.py", line 365, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+  File "/usr/lib/python2.7/json/decoder.py", line 383, in raw_decode
+    raise ValueError("No JSON object could be decoded")
+ValueError: No JSON object could be decoded
+2013-10-18 09:43:01,936 - ERROR: 500 POST /yixinpublic?timestamp=1382089376&nonce=8044113632608642&signature=e814feca978dd398b9e5874c39b2f123fcf6a49a (223.252.198.71) 1092.28ms
