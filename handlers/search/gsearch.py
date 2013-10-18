@@ -116,18 +116,23 @@ class GoogleAPI:
                         continue
 
                     url = link['href']
-                    url = self.extractDomain(url)
+                    #url = self.extractDomain(url)i
+                    
                     if(cmp(url, '') == 0):
                         continue
-                    title = link.renderContents()
+                    #title = link.renderContents()
+                    title = link.text.strip()
                     result.setURL(url)
                     result.setTitle(title)
 
                     span = li.find('span', {'class': 'st'})
                     if (type(span) != types.NoneType):
-                        content = span.renderContents()
+                        #content = span.renderContents()
+                        content = span.text.strip()
                         result.setContent(content)
                     results.append(result)
+                    if len(results) >= 10:
+                        break;
         return results
 
     # search web
