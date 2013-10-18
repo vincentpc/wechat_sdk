@@ -12,8 +12,12 @@ musicResp = '<xml>\n\
                 <FromUserName><![CDATA[%s]]></FromUserName>\n\
                 <CreateTime>%d</CreateTime>\n\
                 <MsgType><![CDATA[music]]></MsgType>\n\
+                <Music>\n\
+                <Title><![CDATA[TITLE]]></Title>\n\
+                <Description><![CDATA[DESCRIPTION]]></Description>\n\
                 <MusicUrl><![CDATA[%s]]></MusicUrl>\n\
                 <HQMusicUrl><![CDATA[%s]]></HQMusicUrl>\n\
+                </Music>\n\
                 <FuncFlag>%d</FuncFlag>\n\
            </xml>'
            
