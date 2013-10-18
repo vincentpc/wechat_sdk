@@ -27,10 +27,8 @@ class WeChat(object):
 
         return response
 
-
      def musicResp(self, url, hqurl="", funcflag=0):
-
-        response = wechat_xml.musicResp % (
+         response = wechat_xml.musicResp % (
                         self.FromUserName,
                         self.ToUserName,
                         time.time(),
@@ -39,10 +37,8 @@ class WeChat(object):
                         funcflag
             )
 
-
         return response       
 
-        
     @staticmethod
     def make_pic(title, description , picUrl, url):
 
