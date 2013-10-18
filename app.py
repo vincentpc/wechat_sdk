@@ -1,8 +1,11 @@
 # -*- coding: utf-8 -*-
 
 import tornado.web
+import logging
+
 from handlers.wechat import WeChat
 from handlers.processxml import processXml
+
 
 class YixinHandler(tornado.web.RequestHandler):
     def get(self):
@@ -34,5 +37,9 @@ application = tornado.web.Application([
 ], debug=True)
 
 if __name__ == "__main__":
+
+    logging.basicConfig(filename = os.path.join(os.getcwd(), '/log/log'), /
+        level = logging.WARN, filemode = 'w', format = '%(asctime)s - %(levelname)s: %(message)s')
+
     application.listen(80)
     tornado.ioloop.IOLoop.instance().start()
