@@ -28,11 +28,13 @@ class WeChat(object):
         return response
 
      
-    def musicResp(self, url, hqurl="", funcflag=0):
+    def musicResp(self, title, description = "", url, hqurl="", funcflag=0):
          response = wechat_xml.musicResp % (
                         self.FromUserName,
                         self.ToUserName,
                         time.time(),
+                        title,
+                        description,
                         url,
                         url,
                         funcflag
