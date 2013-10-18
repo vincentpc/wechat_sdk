@@ -10,7 +10,9 @@ HELP = u'''
     返回:深证股票代码000001信息
   3 输入:fund(空格)000001
     返回:基金代码000001信息
-  4 输入:google(空格)网易
+  4 输入:g(空格)网易
     返回:google网易搜索结果
-  5 赞助&支持<a href="https://me.alipay.com/shuweipku">support</a>
+  5 输入:b(空格)网易
+    返回:baidu网易搜索结果
+  6  赞助&支持<a href="https://me.alipay.com/shuweipku">support</a>
   '''
