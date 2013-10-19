@@ -28,7 +28,7 @@ def generate_menu(token):
                 "key": "help"
             },
             {
-                "type": "view",
+                "type": "click",
                 "name": "关于",
                 "url": "about"
             }]
@@ -52,8 +52,8 @@ def get_menu(token):
     
 def main():
     token = get_access_token()
-    #generate_menu(token)
-    get_menu(token)
+    generate_menu(token)
+    #get_menu(token)
 
 if __name__ == '__main__':
     main()

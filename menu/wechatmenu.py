@@ -28,7 +28,7 @@ def generate_menu(token):
                 "key": "help"
             },
             {
-                "type": "view",
+                "type": "click",
                 "name": "关于",
                 "url": "about"
             }]
