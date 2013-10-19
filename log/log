@@ -50,3 +50,42 @@ Traceback (most recent call last):
 ValueError: could not convert string to float: 
 2013-10-19 06:07:25,865 - ERROR: 500 POST /yixinpublic?timestamp=1382162839&nonce=8117354629733763&signature=cbd1ecaa1a934382aac049279d514632222c224c (223.252.198.74) 736.17ms
 2013-10-19 06:15:08,300 - WARNING: 405 HEAD / (177.200.70.10) 0.47ms
+2013-10-19 06:38:26,413 - ERROR: Uncaught exception POST /yixinpublic?timestamp=1382164700&nonce=8121212506096859&signature=95342de36aec51923cf030341d1ec213b379ebea (223.252.198.65)
+HTTPRequest(protocol='http', host='54.200.177.39', method='POST', uri='/yixinpublic?timestamp=1382164700&nonce=8121212506096859&signature=95342de36aec51923cf030341d1ec213b379ebea', version='HTTP/1.1', remote_ip='223.252.198.65', headers={'Content-Length': '303', 'Host': '54.200.177.39', 'Content-Encoding': 'UTF-8', 'Content-Type': 'text/xml; charset=UTF-8', 'Connection': 'Keep-Alive', 'Accept': 'application/xml', 'User-Agent': 'Netease/0.1'})
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/tornado/web.py", line 1141, in _when_complete
+    callback()
+  File "/usr/local/lib/python2.7/dist-packages/tornado/web.py", line 1167, in _execute_finish
+    self.finish()
+  File "/usr/local/lib/python2.7/dist-packages/tornado/web.py", line 749, in finish
+    content_length = sum(len(part) for part in self._write_buffer)
+  File "/usr/local/lib/python2.7/dist-packages/tornado/web.py", line 749, in <genexpr>
+    content_length = sum(len(part) for part in self._write_buffer)
+TypeError: object of type 'NoneType' has no len()
+2013-10-19 06:38:26,415 - ERROR: 500 POST /yixinpublic?timestamp=1382164700&nonce=8121212506096859&signature=95342de36aec51923cf030341d1ec213b379ebea (223.252.198.65) 2.56ms
+2013-10-19 06:39:01,325 - ERROR: Uncaught exception POST /yixinpublic?timestamp=1382164735&nonce=8121247415587495&signature=81da0ee5ed015903c362d0aa96b18dfbf1496848 (223.252.198.65)
+HTTPRequest(protocol='http', host='54.200.177.39', method='POST', uri='/yixinpublic?timestamp=1382164735&nonce=8121247415587495&signature=81da0ee5ed015903c362d0aa96b18dfbf1496848', version='HTTP/1.1', remote_ip='223.252.198.65', headers={'Content-Length': '317', 'Host': '54.200.177.39', 'Content-Encoding': 'UTF-8', 'Content-Type': 'text/xml; charset=UTF-8', 'Connection': 'Keep-Alive', 'Accept': 'application/xml', 'User-Agent': 'Netease/0.1'})
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/tornado/web.py", line 1141, in _when_complete
+    callback()
+  File "/usr/local/lib/python2.7/dist-packages/tornado/web.py", line 1167, in _execute_finish
+    self.finish()
+  File "/usr/local/lib/python2.7/dist-packages/tornado/web.py", line 749, in finish
+    content_length = sum(len(part) for part in self._write_buffer)
+  File "/usr/local/lib/python2.7/dist-packages/tornado/web.py", line 749, in <genexpr>
+    content_length = sum(len(part) for part in self._write_buffer)
+TypeError: object of type 'NoneType' has no len()
+2013-10-19 06:39:01,326 - ERROR: 500 POST /yixinpublic?timestamp=1382164735&nonce=8121247415587495&signature=81da0ee5ed015903c362d0aa96b18dfbf1496848 (223.252.198.65) 1.57ms
+2013-10-19 06:43:55,136 - ERROR: Uncaught exception POST /yixinpublic?timestamp=1382165029&nonce=8121541227168574&signature=237efd7903c902599daea79fb8ea3a6dfacfee9b (223.252.198.65)
+HTTPRequest(protocol='http', host='54.200.177.39', method='POST', uri='/yixinpublic?timestamp=1382165029&nonce=8121541227168574&signature=237efd7903c902599daea79fb8ea3a6dfacfee9b', version='HTTP/1.1', remote_ip='223.252.198.65', headers={'Content-Length': '301', 'Host': '54.200.177.39', 'Content-Encoding': 'UTF-8', 'Content-Type': 'text/xml; charset=UTF-8', 'Connection': 'Keep-Alive', 'Accept': 'application/xml', 'User-Agent': 'Netease/0.1'})
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/tornado/web.py", line 1141, in _when_complete
+    callback()
+  File "/usr/local/lib/python2.7/dist-packages/tornado/web.py", line 1167, in _execute_finish
+    self.finish()
+  File "/usr/local/lib/python2.7/dist-packages/tornado/web.py", line 749, in finish
+    content_length = sum(len(part) for part in self._write_buffer)
+  File "/usr/local/lib/python2.7/dist-packages/tornado/web.py", line 749, in <genexpr>
+    content_length = sum(len(part) for part in self._write_buffer)
+TypeError: object of type 'NoneType' has no len()
+2013-10-19 06:43:55,137 - ERROR: 500 POST /yixinpublic?timestamp=1382165029&nonce=8121541227168574&signature=237efd7903c902599daea79fb8ea3a6dfacfee9b (223.252.198.65) 1.62ms

@@ -13,9 +13,16 @@ import setting.settings as settings
 def processXml(xml):
     wechat = WeChat(xml)
     help = settings.HELP
-
+    about = settings.ABOUT
     if wechat.MsgType  == 'event':
-            return None
+        if wechat.Event == 'CLICK':
+            if wechat.EventKey == 'help':
+                text = help
+                response = wechat.textResp(content = text, funcflag = 0)
+            elif wechat.EventKey == 'about':
+                text = about
+                response = wechat.textResp(content = text, funcflag = 0)
+
     elif wechat.MsgType == 'text':
         t = wechat.Content
         if t.startswith("fund"):
