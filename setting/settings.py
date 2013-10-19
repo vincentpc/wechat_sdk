@@ -18,3 +18,12 @@ HELP = u'''
 返回:收听歌曲,(歌曲名如送别，加上歌手如朴树送别)
 7  赞助&支持<a href="https://me.alipay.com/shuweipku">support</a>
   '''
+
+ABOUT = u'''
+wiki小百科
+名称:wiki
+易信号:wikics
+作者:Vincent Chan
+功能:实时基金,股价查询,google,baidu,搜索收听音乐
+赞助&支持: <a href="https://me.alipay.com/shuweipku">support</a>
+  '''
