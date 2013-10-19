@@ -47,7 +47,7 @@ def get_menu(token):
     url = get_menu_url % urllib.urlencode(params)
     request = urllib2.Request(url)
     response = urllib2.urlopen(request)
-    resp = json.loads(f.read())
+    resp = json.loads(response.read())
     print resp
     
 def main():
