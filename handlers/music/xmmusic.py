@@ -11,7 +11,7 @@ class music:
   
   
 class music_api:
-  def getsong(songName):
+  def getsong(self,songName):
       result = music()
       
       songUrl = 'http://nnlife.duapp.com/xiami.php?key=%s'\

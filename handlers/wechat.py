@@ -4,6 +4,7 @@ import xml.etree.ElementTree as ET
 import wechat_xml
 import time
 
+
 class WeChat(object):
 
     def __init__(self, messageXML):
@@ -28,7 +29,7 @@ class WeChat(object):
         return response
 
      
-    def musicResp(self, title, description, url, funcflag=0):
+    def musicResp(self, title, description, url,hqurl, funcflag=0):
          response = wechat_xml.musicResp % (
                         self.FromUserName,
                         self.ToUserName,
@@ -36,10 +37,9 @@ class WeChat(object):
                         title,
                         description,
                         url,
-                        url,
+                        hqurl,
                         funcflag
             )
-         print response
          return response
 
     @staticmethod

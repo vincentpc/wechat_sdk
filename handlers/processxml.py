@@ -4,7 +4,7 @@ import logging
 
 from search.gsearch import GoogleAPI
 from search.bsearch import BaiduAPI
-from music.mamusic import getSongUrl
+from music.xmmusic import music_api
 from finance.jsquery import query_fund,query_stock
 from handlers.wechat import WeChat
 import setting.settings as settings
@@ -63,13 +63,14 @@ def processXml(xml):
                 itemlist.append(pic_item)
             response = wechat.picResp(itemlist,funcflag = 0)
         elif t.startswith('m '):
-            data = getSongUrl(t[2:],"")
-            if data:
-                text = data
+            query = t[2:]
+            api = music_api()
+            result = api.getsong(query)
+            if result:
+                response = wechat.musicResp(title = result.title,description = result.description,\
+                    url = result.url,hqurl = result.url, funcflag = 0)
             else:
-                text = u"music not exist"
-            response = wechat.musicResp(title =t[2:],description = "", url = text, funcflag = 0)
-            
+                response = None
         elif t.startswith('test'):
             data = t[5:]
             text = u"echo back: %s\n" % (data) #echo back

@@ -1,5 +1,26 @@
-2013-10-18 09:43:01,933 - ERROR: Uncaught exception POST /yixinpublic?timestamp=1382089376&nonce=8044113632608642&signature=e814feca978dd398b9e5874c39b2f123fcf6a49a (223.252.198.71)
-HTTPRequest(protocol='http', host='54.200.177.39', method='POST', uri='/yixinpublic?timestamp=1382089376&nonce=8044113632608642&signature=e814feca978dd398b9e5874c39b2f123fcf6a49a', version='HTTP/1.1', remote_ip='223.252.198.71', headers={'Content-Length': '268', 'Content-Encoding': 'UTF-8', 'Content-Type': 'text/xml; charset=UTF-8', 'Connection': 'Keep-Alive', 'Host': '54.200.177.39', 'Accept': 'application/xml'})
+2013-10-18 15:17:24,718 - WARNING: 405 HEAD / (177.200.70.197) 1.60ms
+2013-10-18 15:32:15,037 - ERROR: Uncaught exception POST /yixinpublic?timestamp=1382110330&nonce=8066842246699271&signature=cda145d71257254b1df7a02b00dbb387f5a4aeed (223.252.198.65)
+HTTPRequest(protocol='http', host='54.200.177.39', method='POST', uri='/yixinpublic?timestamp=1382110330&nonce=8066842246699271&signature=cda145d71257254b1df7a02b00dbb387f5a4aeed', version='HTTP/1.1', remote_ip='223.252.198.65', headers={'Content-Length': '302', 'Host': '54.200.177.39', 'Content-Encoding': 'UTF-8', 'Content-Type': 'text/xml; charset=UTF-8', 'Connection': 'Keep-Alive', 'Accept': 'application/xml', 'User-Agent': 'Netease/0.1'})
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/tornado/web.py", line 1141, in _when_complete
+    callback()
+  File "/usr/local/lib/python2.7/dist-packages/tornado/web.py", line 1167, in _execute_finish
+    self.finish()
+  File "/usr/local/lib/python2.7/dist-packages/tornado/web.py", line 749, in finish
+    content_length = sum(len(part) for part in self._write_buffer)
+  File "/usr/local/lib/python2.7/dist-packages/tornado/web.py", line 749, in <genexpr>
+    content_length = sum(len(part) for part in self._write_buffer)
+TypeError: object of type 'NoneType' has no len()
+2013-10-18 15:32:15,037 - ERROR: 500 POST /yixinpublic?timestamp=1382110330&nonce=8066842246699271&signature=cda145d71257254b1df7a02b00dbb387f5a4aeed (223.252.198.65) 1.59ms
+2013-10-18 16:06:37,801 - WARNING: 404 GET http://www.baidu.com/ (222.89.55.123) 0.67ms
+2013-10-18 16:39:09,307 - WARNING: 404 GET http://www.baidu.com/ (121.199.49.149) 0.54ms
+2013-10-18 17:12:18,252 - WARNING: 405 HEAD / (177.200.70.178) 0.60ms
+2013-10-18 18:22:05,113 - WARNING: 405 HEAD / (177.200.73.22) 0.63ms
+2013-10-18 22:51:53,165 - WARNING: 404 GET http://www.baidu.com/ (222.89.55.123) 0.53ms
+2013-10-19 02:30:17,714 - WARNING: 404 GET http://www.baidu.com/ (49.159.169.40) 0.57ms
+2013-10-19 05:35:31,517 - WARNING: 404 GET /vincentpc.github.com (198.133.224.185) 0.47ms
+2013-10-19 06:06:34,150 - ERROR: Uncaught exception POST /yixinpublic?timestamp=1382162787&nonce=8117303096848355&signature=f27cf60ef23923d1e88f3877d90923fde98d7689 (223.252.198.74)
+HTTPRequest(protocol='http', host='54.200.177.39', method='POST', uri='/yixinpublic?timestamp=1382162787&nonce=8117303096848355&signature=f27cf60ef23923d1e88f3877d90923fde98d7689', version='HTTP/1.1', remote_ip='223.252.198.74', headers={'Content-Length': '270', 'Host': '54.200.177.39', 'Content-Encoding': 'UTF-8', 'Content-Type': 'text/xml; charset=UTF-8', 'Connection': 'Keep-Alive', 'Accept': 'application/xml', 'User-Agent': 'Netease/0.1'})
 Traceback (most recent call last):
   File "/usr/local/lib/python2.7/dist-packages/tornado/web.py", line 1141, in _when_complete
     callback()
@@ -7,15 +28,25 @@ Traceback (most recent call last):
     self._when_complete(method(*self.path_args, **self.path_kwargs),
   File "app.py", line 27, in post
     data = processXml(self.request.body)
-  File "/home/ubuntu/tornado/wechatwiki/handlers/processxml.py", line 66, in processXml
-    data = getSongUrl(t[2:],"")
-  File "/home/ubuntu/tornado/wechatwiki/handlers/music/mamusic.py", line 15, in getSongUrl
-    data = json.loads(c);
-  File "/usr/lib/python2.7/json/__init__.py", line 338, in loads
-    return _default_decoder.decode(s)
-  File "/usr/lib/python2.7/json/decoder.py", line 365, in decode
-    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
-  File "/usr/lib/python2.7/json/decoder.py", line 383, in raw_decode
-    raise ValueError("No JSON object could be decoded")
-ValueError: No JSON object could be decoded
-2013-10-18 09:43:01,936 - ERROR: 500 POST /yixinpublic?timestamp=1382089376&nonce=8044113632608642&signature=e814feca978dd398b9e5874c39b2f123fcf6a49a (223.252.198.71) 1092.28ms
+  File "/home/ubuntu/tornado/wechatwiki/handlers/processxml.py", line 22, in processXml
+    data = query_fund(t[5:])
+  File "/home/ubuntu/tornado/wechatwiki/handlers/finance/jsquery.py", line 35, in query_fund
+    daygrowrate=('%.2f%%' % ( 100*(float(v2[1])-float(v2[3]))/float(v2[3]) )))
+ValueError: could not convert string to float: 
+2013-10-19 06:06:34,151 - ERROR: 500 POST /yixinpublic?timestamp=1382162787&nonce=8117303096848355&signature=f27cf60ef23923d1e88f3877d90923fde98d7689 (223.252.198.74) 551.88ms
+2013-10-19 06:07:25,864 - ERROR: Uncaught exception POST /yixinpublic?timestamp=1382162839&nonce=8117354629733763&signature=cbd1ecaa1a934382aac049279d514632222c224c (223.252.198.74)
+HTTPRequest(protocol='http', host='54.200.177.39', method='POST', uri='/yixinpublic?timestamp=1382162839&nonce=8117354629733763&signature=cbd1ecaa1a934382aac049279d514632222c224c', version='HTTP/1.1', remote_ip='223.252.198.74', headers={'Content-Length': '270', 'Host': '54.200.177.39', 'Content-Encoding': 'UTF-8', 'Content-Type': 'text/xml; charset=UTF-8', 'Connection': 'Keep-Alive', 'Accept': 'application/xml', 'User-Agent': 'Netease/0.1'})
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/tornado/web.py", line 1141, in _when_complete
+    callback()
+  File "/usr/local/lib/python2.7/dist-packages/tornado/web.py", line 1162, in _execute_method
+    self._when_complete(method(*self.path_args, **self.path_kwargs),
+  File "app.py", line 27, in post
+    data = processXml(self.request.body)
+  File "/home/ubuntu/tornado/wechatwiki/handlers/processxml.py", line 22, in processXml
+    data = query_fund(t[5:])
+  File "/home/ubuntu/tornado/wechatwiki/handlers/finance/jsquery.py", line 35, in query_fund
+    daygrowrate=('%.2f%%' % ( 100*(float(v2[1])-float(v2[3]))/float(v2[3]) )))
+ValueError: could not convert string to float: 
+2013-10-19 06:07:25,865 - ERROR: 500 POST /yixinpublic?timestamp=1382162839&nonce=8117354629733763&signature=cbd1ecaa1a934382aac049279d514632222c224c (223.252.198.74) 736.17ms
+2013-10-19 06:15:08,300 - WARNING: 405 HEAD / (177.200.70.10) 0.47ms
