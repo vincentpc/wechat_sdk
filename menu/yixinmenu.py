@@ -30,8 +30,9 @@ def generate_menu(token):
             {
                 "type": "click",
                 "name": "关于",
-                "url": "about"
-            }]
+                "key": "about"
+            }
+            ]
     }
     params = {'access_token': urllib.quote(token)}
     url = menu_url % urllib.urlencode(params)
@@ -53,7 +54,7 @@ def get_menu(token):
 def main():
     token = get_access_token()
     generate_menu(token)
-    #get_menu(token)
+    get_menu(token)
 
 if __name__ == '__main__':
     main()

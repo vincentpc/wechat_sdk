@@ -22,6 +22,9 @@ def processXml(xml):
             elif wechat.EventKey == 'about':
                 text = about
                 response = wechat.textResp(content = text, funcflag = 0)
+            else:
+                text = help
+                response = wechat.textResp(content = text, funcflag = 0)
 
     elif wechat.MsgType == 'text':
         t = wechat.Content
