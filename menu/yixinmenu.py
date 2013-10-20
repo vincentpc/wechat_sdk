@@ -13,6 +13,7 @@ access_url = "https://api.yixin.im/cgi-bin/token?grant_type=client_credential&ap
 menu_url = "https://api.yixin.im/cgi-bin/menu/create?%s"
 get_menu_url = "https://api.yixin.im/cgi-bin/menu/get?%s"
 
+
 def get_access_token():
     f = urllib.urlopen(access_url % (appid, secret))
     resp = json.loads(f.read())
@@ -32,7 +33,7 @@ def generate_menu(token):
                 "name": "关于",
                 "key": "about"
             }
-            ]
+        ]
     }
     params = {'access_token': urllib.quote(token)}
     url = menu_url % urllib.urlencode(params)
@@ -42,7 +43,6 @@ def generate_menu(token):
     print response.read()
 
 
-
 def get_menu(token):
     params = {'access_token': urllib.quote(token)}
     url = get_menu_url % urllib.urlencode(params)
@@ -50,7 +50,8 @@ def get_menu(token):
     response = urllib2.urlopen(request)
     resp = json.loads(response.read())
     print resp
-    
+
+
 def main():
     token = get_access_token()
     generate_menu(token)

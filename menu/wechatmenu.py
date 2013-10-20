@@ -13,6 +13,7 @@ access_url = "https://api.weixin.qq.com/cgi-bin/token?grant_type=client_credenti
 menu_url = "https://api.weixin.qq.com/cgi-bin/menu/create?%s"
 get_menu_url = "https://api.weixin.qq.com/cgi-bin/menu/get?%s"
 
+
 def get_access_token():
     f = urllib.urlopen(access_url % (appid, secret))
     resp = json.loads(f.read())
@@ -30,7 +31,7 @@ def generate_menu(token):
             {
                 "type": "click",
                 "name": "关于",
-                "url": "about"
+                "key": "about"
             }]
     }
     params = {'access_token': urllib.quote(token)}
@@ -41,7 +42,6 @@ def generate_menu(token):
     print response.read()
 
 
-
 def get_menu(token):
     params = {'access_token': urllib.quote(token)}
     url = get_menu_url % urllib.urlencode(params)
@@ -49,11 +49,12 @@ def get_menu(token):
     response = urllib2.urlopen(request)
     resp = json.loads(response.read())
     print resp
-    
+
+
 def main():
     token = get_access_token()
     generate_menu(token)
-    #get_menu(token)
+    # get_menu(token)
 
 if __name__ == '__main__':
     main()
